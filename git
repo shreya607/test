@@ -6,8 +6,6 @@ Pull the files to local:git pull https://github.com/shreya607/unisotest.git unis
 
 git add /home/shreya.vemuganti/Downloads/UNISO-Theme
 
-//hello//
-
 
 git commit -m "Uploading /home/shreya.vemuganti/Downloads/UNISO-Theme to unisotest1"
 
