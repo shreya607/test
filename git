@@ -1,0 +1,11 @@
+Adding File : git add package.json
+Commit the file to git : git commit -m "Uploading Package Json file to unisotest1"
+Push the file to git branch : git push https://github.com/shreya607/unisotest.git unisotest1
+Pull the files to local:git pull https://github.com/shreya607/unisotest.git unisotest1.
+
+
+git add /home/shreya.vemuganti/Downloads/UNISO-Theme
+
+
+git commit -m "Uploading /home/shreya.vemuganti/Downloads/UNISO-Theme to unisotest1"
+
