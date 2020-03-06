@@ -1,0 +1,26 @@
+[code]
+
+<script type=’application/ld+json’>
+{
+“@context”: “http://schema.org/”,
+“@type”: “Product”,
+“name”: “{{ product.title }}”,
+“url”: “{{ shop.url }}{{ product.url }}”,
+“image”: “{{ shop.url }}{{ product.featured_image }}”,
+“description”: “{{ page_description }}”,
+“aggregateRating”: {
+“@type”: “AggregateRating”,
+“ratingValue”: “{{ product.metafields.yotpo.reviews_average }}”,
+“reviewCount”: “{{ product.metafields.yotpo.reviews_count }}”
+},
+“offers”: {
+“@type”: “Offer”,
+“priceCurrency”: “{{ shop.currency }}”,
+“price”: “{{ product.price | money_without_currency }}”,
+“itemCondition”: “http://schema.org/NewCondition”,
+“availability”: “http://schema.org/InStock”
+}
+}
+</script>
+
+[/code]

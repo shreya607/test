@@ -1,0 +1,60 @@
+<div class="powr-banner-slider" id="4b798d20_1572602918"></div> {% comment %}
+  The contents of the collection.liquid template can be found in /sections/collection-template.liquid
+{% endcomment %}
+Tag Filter:
+<ul class="subnav clearfix">
+ <li{% unless current_tags %} class="active"{% endunless %}>
+   {% if collection.handle %}
+   <a href="/collections/{{ collection.handle }}{% if collection.sort_by %}?sort_by={{ collection.sort_by }}{% endif %}">All</a>
+   {% elsif collection.current_type %}
+   <a href="{{ collection.current_type | url_for_type | sort_by: collection.sort_by }}">All</a>
+   {% elsif collection.current_vendor %}
+   <a href="{{ collection.current_vendor | url_for_vendor | sort_by: collection.sort_by }}">All</a>
+   {% endif %}
+ </li>
+ {% for tag in collection.all_tags %}
+ {% if current_tags contains tag %}
+ <li class="active">
+   {{ tag | link_to_remove_tag: tag }}
+ </li>
+ {% else %}
+ <li>
+   {{ tag | link_to_tag: tag }}
+ </li>
+ {% endif %}
+ {% endfor %}
+</ul>
+
+
+{{ customer.email }}
+        {% for tag in customer.tags %}
+          {{ tag }}
+		{% endfor %}
+      
+      {% for tag in product.tags %}
+  			{{ tag }}
+		{% endfor %}
+<!-- <ul class="subnav clearfix">
+ <li{% unless current_tags %} class="active"{% endunless %}>
+   {% if collection.handle %}
+   <a href="/collections/{{ collection.handle }}{% if collection.sort_by %}?sort_by={{ collection.sort_by }}{% endif %}">All</a>
+   {% elsif collection.current_type %}
+   <a href="{{ collection.current_type | url_for_type | sort_by: collection.sort_by }}">All</a>
+   {% elsif collection.current_vendor %}
+   <a href="{{ collection.current_vendor | url_for_vendor | sort_by: collection.sort_by }}">All</a>
+   {% endif %}
+ </li>
+ {% for tag in collection.all_tags %}
+ {% if current_tags contains tag %}
+ <li class="active">
+   {{ tag | link_to_remove_tag: tag }}
+ </li>
+ {% else %}
+ <li>
+   {{ tag | link_to_tag: tag }}
+ </li>
+ {% endif %}
+ {% endfor %}
+
+
+{% section 'collection-template' %}
